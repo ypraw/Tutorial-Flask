@@ -22,23 +22,17 @@
          <div class="col-md-4 ">
              <div class="panel panel-danger">
                <div class="panel-heading">
-                 <h3 class="panel-title">Yeay, Tutorial Flask</h3>
+                 <h3 class="panel-title">Biodata</h3>
                </div>
                <div class="panel-body">
-                 Panel bootstrap yang ditulis dengan Flask
-
+                 <ul>
+                     {% for items in content.items() %}
+                     <li>{{ items }}</li>
+                     {% endfor %}
+                 </ul>
                </div>
-               <div class="panel-footer">
-                   ditulis oleh {{name}}
-                   <ul>
-                       {%for i in range (1,11,1)%}
-                       <li>ini merupakan looping ke {{i}}</li>
-                       {%endfor%}
-                   </ul>
-               </div>
+               <a href="{{url_for('index')}}" class="btn btn-danger" role="button">Back to Index</a>
              </div>
-             <!-- Tambah Button untuk hyperlink ke template hello-->
-             <a href="{{url_for('hello')}}" class="btn btn-info" role="button">Link Button</a>
          </div>
          <div class="col-md-4">
 
