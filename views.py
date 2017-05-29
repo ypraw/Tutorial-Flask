@@ -9,5 +9,9 @@ def index(name="Yunindyo"):
     return render_template('index.html', name=name)
 
 
+# def index():
+#    return "hello world"
+
+
 if __name__ == '__main__':
     app.run()
