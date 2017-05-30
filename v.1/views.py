@@ -5,21 +5,32 @@ app = Flask(__name__, static_url_path='')
 
 
 '''
-Untuk Bagian pertama dan kedua hapus salah satu komentar pada fungsi index
-sampai dengan return.
-* jika mengikuti bagian Pertama maka berikan komentar
-  pada fungsi index bagian kedua
-* jika mengikuti bagian kedua dan seterusnya, maka biarkan index bagian pertama
-  seperti ini (settingan default, bagian pertama di jadikan komentar)
+KETENTUAN :
+
+* Jika mengikuti bagian Pertama maka berikan komentar
+  pada fungsi index bagian kedua, dst
+* Jika mengikuti bagian kedua , berikan komentar pada bagian Pertama
+  dan bagian ketiga
+* Jika mengikuti bagian ke 3, maka pada bagian pertama dan dua dibuat
+  menjadi kolom komentar
+
+* JIKA TERJADI ERROR PADA APP.ROUTE, PERHATIKAN IDENTASINYA
+
+IDENTASI YANG BENAR
+@app.route()
+def namafungsi
+
+Bukan,
+ @app.route()
+ def namafungsi
 '''
 
 
-@app.route('/')
 # Start Bagian Pertama
 # Bagian Pertama, Hello World from flask
+#@app.route('/')
 #
 #
-# hapus komentar dari bawah ini sampai return
 # def index():
 #    return "hello world"
 #
@@ -27,22 +38,19 @@ sampai dengan return.
 #
 #
 ######################################################
-#
-#
 # Start Bagian Kedua
 # Bagian Kedua routing dan Render Template
+# hapus/berikantanda#
 #
-def index(name='Yunindyo'):
-    return render_template('index.html', name=name)
+# def index(name='Yunindyo'):
+#    return render_template('index.html', name=name)
 # End Bagian Kedua
-
-
-@app.route('/Hello')
-# Bagian Ketiga routing untuk hyperlink
-def hello():
-    content = {'Nama': 'Yunindyo Prabowo', 'Asal': 'Semarang', 'Umur': '20'}
-    return render_template('hello.html', content=content)
-
-
+########################################################################
+# Bagian Ketiga routing untuk hyperlink (hapus/berikantanda# dibawah ini)
+#@app.route('/Hello')
+#
+# def hello():
+#    content = {'Nama': 'Yunindyo Prabowo', 'Asal': 'Semarang', 'Umur': '20'}
+#    return render_template('hello.html', content=content)
 if __name__ == '__main__':
     app.run()
