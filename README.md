@@ -18,7 +18,7 @@ pip install -r requirements.txt
 # V.1
 Merupakan source tutorial flask dengan basic template, routing dan views. Dimana setiap file template dan views direpresentasikan masing-maing viewsZ.py/indexZ.html dimana **Z** merujuk pada bagian 1 2 3.
 
-_**setiap kali pindah bagian perhatikan untuk meng-export viewx.py sesuai dengan bagian yang sedang diikuti**_,
+**_setiap kali pindah bagian perhatikan untuk meng-export viewx.py sesuai dengan bagian yang sedang diikuti_**,
 sebagai contoh untuk bagian satu :
 
 ```bash
