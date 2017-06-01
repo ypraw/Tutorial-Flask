@@ -1,9 +1,9 @@
 # Tutorial-Flask
 Source Belajar Framework Flask, didalam repository ini terdapat dua jenis source code,
 yaitu versi 1 dan versi 2.
-Untuk instalasi Flask, bisa menggunakan file requirement.txt.
+Untuk instalasi Flask, bisa menggunakan file requirements.txt.
 
-Jika, pada konsol anda bukan berada di directory file requirement.txt gunakan perintah berikut :
+Jika, pada konsol anda bukan berada di directory file requirements.txt gunakan perintah berikut :
 
 ```bash
 pip install -r /path/to/requirements.txt
@@ -32,7 +32,7 @@ kemudian lanjut lagi bagian dua, maka kita ulangi lagi dengan mengganti views1 m
 $ export FLASK_APP=views2.py
 $ flask run
 ```
-hal ini berlaku seterusnya.
+hal ini berlaku seterusnya. atau jika ingin menggunakan 1 views. maka hapus semua kode di disetiap bagian dari tutorial ini, lalu samakan dengan kode dari bagian yang sedang anda pelajari.
 
 > [coming soon] khusus bagian ke 4, merupakan gabungan dari bagian 1,2,3 ditambah dengan koneksi database.
 
