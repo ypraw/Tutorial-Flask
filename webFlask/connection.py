@@ -9,45 +9,48 @@ class MysqlUserDB:
     # Init Start
     warnings.filterwarnings('error')
 
-    def __init__(self, DBrootHost, DBrootUser, DBrootPass):
+    def __init__(self, DBrootHost, DBrootUser, DBrootPass, DBrootDatabase):
         self.DBrootHost = DBrootHost
         self.DBrootUser = DBrootUser
         self.DBrootPass = DBrootPass
+        self.DBrootDatabase = DBrootDatabase
 
         try:
             print("Checking connection of MYSQL ...")
-            self.con = mysql.connect(DBrootHost, DBrootUser, DBrootPass)
+            self.con = mysql.connect(DBrootHost, DBrootUser, DBrootPass, DBrootDatabase)
             self.cursor = self.con.cursor()
             self.cursor.execute('Select version()')
-            print("Connected to Mysql Database")
-        except mysql.Error as error:
-            print("Error %s\n Stop.\n" % error)
-            sys.exit()
+            print("Connected to Mysql Database\n")
+        # except mysql.Error as error:
+        #    print("Error %s\n Stop.\n" % error)
+        #    sys.exit()
+        except Warning as warn:
+            print("Warning", warn)
 
     def CreateDB(self, DBrootDatabase):
         print("Creating database...")
         try:
             self.cursor.execute('CREATE database if NOT exists ' + DBrootDatabase)
-            self.cursor.execute("SHOW DATABASES LIKE '?'" % DBrootDatabase)
+            self.cursor.execute("SHOW DATABASES LIKE %s", (DBrootDatabase,))
             dbs = self.cursor.fetchone()
             print("Database created: ", dbs[0])
         except Warning as warn:
-            print("Warning: %s \nStop.\n" % warn)
+            print("Warning: %s \nStopping Process.\n" % warn)
             sys.exit()
 
-    def GrantsAccess(self, DBrootUser, DBrootPass, DBrootDatabase):
+    def GrantsAccess(self, DBrootDatabase):
         print("Accessing Account ...")
         try:
-            self.cursor.execute("SHOW DATABASES LIKE '%s'" % (DBrootDatabase))
+            self.cursor.execute("SHOW DATABASES LIKE %s", (DBrootDatabase,))
             result = self.cursor.fetchone()
             print("Access Granted for Database", result[0])
         except Warning as warn:
-            print("Warning %s" % warn)
-        except mysql.Error as error:
-            print("error %s \n stop" % error)
-            sys.exit()
+            print("Warningg %s" % warn)
 
-    def __del__(self):
+    def getDB(self):
+        return self.cursor
+
+    def delCon(self):
         print("Finishing operation ...")
         self.cursor.close()
         self.con.close()
@@ -58,7 +61,8 @@ class MysqlUserDB:
 #    def SelectQ(self, field[None], dbTable):
 #        return self.cursor.execute(SELECT field[] from dbTable)
 
-    def computeMD5hash(string):
+    def computeMD5hash(self, string=""):
+        self.string = string
         m = hashlib.md5()
         m.update(string.encode('utf-8'))
         return m.hexdigest()
