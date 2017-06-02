@@ -5,7 +5,6 @@ import warnings
 
 
 class MysqlUserDB:
-    warnings
     warnings.filterwarnings('error')
 
     def __init__(self, DBrootHost, DBrootUser, DBrootPass, DBrootDatabase):
@@ -16,11 +15,12 @@ class MysqlUserDB:
 
         try:
             print("Checking connection of MYSQL ...")
-            self.con = mysql.connect(DBrootHost, DBrootUser, DBrootPass, DBrootDatabase)
+            self.con = mysql.connect(DBrootHost, DBrootUser, DBrootPass,
+                                     DBrootDatabase)
             self.cursor = self.con.cursor()
             self.cursor.execute('Select version()')
             print("Connected to Mysql Database")
-        except MySQLdb.Error as error:
+        except mysql.Error as error:
             print("Error %s\n Stop.\n" % error)
             sys.exit()
 
@@ -53,3 +53,8 @@ class MysqlUserDB:
         self.cursor.close()
         self.con.close()
         print("Finished")
+
+    def computeMD5hash(string):
+        m = hashlib.md5()
+        m.update(string.encode('utf-8'))
+        return m.hexdigest()
