@@ -1,7 +1,8 @@
-import database as dbs
+import connection as dbs
 
 mysqli = dbs.MysqlUserDB(DBrootHost='127.0.0.1', DBrootUser='root',
-                         DBrootPass='', DBrootDatabase='flasktutorial')
+                         DBrootPass='')
+mysqli.CreateDB(DBrootDatabase='jajal')
 mysqli.GrantsAccess(DBrootUser='root', DBrootPass='',
-                    DBrootDatabase='flasktutorial')
+                    DBrootDatabase='jajal1')
 del mysqli

@@ -5,18 +5,18 @@ import warnings
 
 
 class MysqlUserDB:
+    # initialization Connection Database
+    # Init Start
     warnings.filterwarnings('error')
 
-    def __init__(self, DBrootHost, DBrootUser, DBrootPass, DBrootDatabase):
+    def __init__(self, DBrootHost, DBrootUser, DBrootPass):
         self.DBrootHost = DBrootHost
         self.DBrootUser = DBrootUser
         self.DBrootPass = DBrootPass
-        self.DBrootDatabase = DBrootDatabase
 
         try:
             print("Checking connection of MYSQL ...")
-            self.con = mysql.connect(DBrootHost, DBrootUser, DBrootPass,
-                                     DBrootDatabase)
+            self.con = mysql.connect(DBrootHost, DBrootUser, DBrootPass)
             self.cursor = self.con.cursor()
             self.cursor.execute('Select version()')
             print("Connected to Mysql Database")
@@ -24,24 +24,24 @@ class MysqlUserDB:
             print("Error %s\n Stop.\n" % error)
             sys.exit()
 
-    def CreateDB(self, DBrootHost):
+    def CreateDB(self, DBrootDatabase):
         print("Creating database...")
         try:
-            self.cursor.execute('create database if not exists ' + DBrootHost)
-            self.cursor.execute('show databases like %s' % DBrootHost)
+            self.cursor.execute('CREATE database if NOT exists ' + DBrootDatabase)
+            self.cursor.execute("SHOW DATABASES LIKE '%s'" % DBrootDatabase)
             dbs = self.cursor.fetchone()
-            print('Database created: %s' % dbs)
+            print("Database created: ", dbs[0])
         except Warning as warn:
             print("Warning: %s \nStop.\n" % warn)
             sys.exit()
 
     def GrantsAccess(self, DBrootUser, DBrootPass, DBrootDatabase):
-        print("Accesing Account ...")
+        print("Accessing Account ...")
         try:
             self.cursor.execute("SELECT user,db FROM mysql.db WHERE db ='%s'"
                                 % (DBrootDatabase))
             result = self.cursor.fetchone()
-            print("Access Granted", result)
+            print("Access Granted")
         except Warning as warn:
             print("Warning %s" % warn)
         except mysql.Error as error:
@@ -53,6 +53,11 @@ class MysqlUserDB:
         self.cursor.close()
         self.con.close()
         print("Finished")
+# Init End
+
+# Query Method Start
+#    def SelectQ(self, field[None], dbTable):
+#        return self.cursor.execute(SELECT field[] from dbTable)
 
     def computeMD5hash(string):
         m = hashlib.md5()
