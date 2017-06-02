@@ -38,10 +38,9 @@ class MysqlUserDB:
     def GrantsAccess(self, DBrootUser, DBrootPass, DBrootDatabase):
         print("Accessing Account ...")
         try:
-            self.cursor.execute("SELECT user,db FROM mysql.db WHERE db ='%s'"
-                                % (DBrootDatabase))
+            self.cursor.execute("SHOW DATABASES LIKE '%s'" % (DBrootDatabase))
             result = self.cursor.fetchone()
-            print("Access Granted")
+            print("Access Granted for Database", result[0])
         except Warning as warn:
             print("Warning %s" % warn)
         except mysql.Error as error:
