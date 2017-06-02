@@ -28,7 +28,7 @@ class MysqlUserDB:
         print("Creating database...")
         try:
             self.cursor.execute('CREATE database if NOT exists ' + DBrootDatabase)
-            self.cursor.execute("SHOW DATABASES LIKE '%s'" % DBrootDatabase)
+            self.cursor.execute("SHOW DATABASES LIKE '?'" % DBrootDatabase)
             dbs = self.cursor.fetchone()
             print("Database created: ", dbs[0])
         except Warning as warn:
