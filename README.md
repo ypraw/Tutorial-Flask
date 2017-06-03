@@ -1,7 +1,8 @@
 # Tutorial-Flask
 Source Belajar Framework Flask, didalam repository ini terdapat dua jenis source code,
 yaitu versi 1 dan versi 2.
-Untuk instalasi Flask, bisa menggunakan file requirements.txt.
+Untuk instalasi Flask, bisa menggunakan file requirements.txt. (_disarankan menggunakan virtual environment_)
+Jika belum mengetahui virtual environment, [Kunjungi Blog saya](https://ypraw.github.io/2017/05/29/Mengenal-Virtual-Environment-pada-Python/)
 
 Jika, pada konsol anda bukan berada di directory file requirements.txt gunakan perintah berikut :
 
