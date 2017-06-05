@@ -10,20 +10,20 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-6">
-                            <h1>Dasboard <small>oleh {{username}}</small></h1>
+                            <h1><strong>Dasboard</strong> <small>oleh {{username}}</small></h1>
                         </div>
                         <div class="col-md-6">
-                            <div class="">
-
-                            </div>
-                            <a href="{{ url_for('logout') }}"class="btn btn-info" role="button"> Logout </a>
+                            <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Logout</a>
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1><strong>HELLO {{username}}</strong></h1>
+                    </div>
+                </div>
             </div>
         </div>
-{% endblock %}
-{% block footer %}
-
 {% endblock %}
