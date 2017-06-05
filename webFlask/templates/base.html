@@ -7,9 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}FLASK TUTORIAL</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
     {% endblock %}
   </head>
   <body>
+      <div class="holder">
+
+
+      <div id="body">
+
+
   {% block panel %}
                 <div class="container-fluid" style="background-color:#023e79;padding-top:10px;">
                     <div class="row">
@@ -33,8 +40,11 @@
 
           {% endblock %}
       </div>
+ </div>
+ <div class="footer">
 
-      <footer>
+
+      <footer >
           {% block footer %}
           <div class="panel panel-default">
               <div class="panel-default">
@@ -44,6 +54,8 @@
 
           {% endblock %}
       </footer>
+      </div>
+      </div>
      <script src="/assets/js/jquery-min.js"></script>
      <script src="/assets/js/bootstrap.min.js"></script>
   </body>
