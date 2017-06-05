@@ -37,11 +37,12 @@ hal ini berlaku seterusnya. atau jika ingin menggunakan 1 views. maka hapus semu
 
 > [coming soon] **_The Real Application CRUD On FLASK_**
 
-Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/2017/05/29/Tutorial-Flask-Framework/)
+Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask-Tutorial-Bagian-1/)
 > ### Terdiri Dari
 > * Return String Hello World (commited)
 > * Rendering Template (commited)
 > * Routing (commited)
+> * The Real Aplication (on Progress)
 > * Login Modelling mysql (on Progress)
 
 # V.2
