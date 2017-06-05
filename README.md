@@ -16,7 +16,7 @@ Jika, path directory pada konsol sudah berada di directory yang sama dengan file
 pip install -r requirements.txt
 ```
 
-# V.1
+# Versi 1 (webFlask)
 Merupakan source tutorial flask dengan basic template, routing dan views. Dimana setiap file template dan views direpresentasikan masing-maing viewsZ.py/indexZ.html dimana **Z** merujuk pada bagian 1 2 3.
 
 <b><i>setiap kali pindah bagian perhatikan untuk meng-export viewx.py sesuai dengan bagian yang sedang diikuti.</i></b>
