@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>LOGIN</title>
         <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        <script src="/assets/js/jquery-min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -13,7 +15,12 @@
                         <span class="glyphicon glyphicon-user"></span>
                         Account Login
                     </h4>
-
+                    {% if error%}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>{{error}}</strong>
+                    </div>
+                    {% endif%}
                     <form action="{{ url_for('login') }}" method="POST" style="padding:20px;">
                         <div class="form-group input-group">
                             <span class="input-group-addon">
