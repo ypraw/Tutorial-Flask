@@ -46,5 +46,5 @@ def dashboard():
 #   End Bagian keempat
 # if __name__ == '__main__':
 app.debug = True
-app.secret_key = '5813En@'
+app.secret_key = '4KuC1nT@K4MU'
 app.run()
