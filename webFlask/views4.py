@@ -1,6 +1,6 @@
 #!flask/bin/python
 
-from flask import Flask, render_template, request, url_for, redirect, make_response
+from flask import Flask, render_template, request, url_for, redirect, session
 
 app = Flask(__name__, static_url_path='')
 
@@ -15,10 +15,17 @@ def login():
     error = None
     if request.method == 'POST':
         if validasi_login(request.form['username'], request.form['password']):
-            return redirect(url_for('dashboard', username=request.form.get('username')))
+            session['username'] = request.form.get('username')
+            return redirect(url_for('dashboard'))
         else:
             error = "incorrect password or username"
     return render_template('login.html', error=error)
+
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for("index"))
 
 
 def validasi_login(username, password):
@@ -28,12 +35,16 @@ def validasi_login(username, password):
         return False
 
 
-@app.route('/dashboard/<username>')
-def dashboard(username):
-    return render_template('dashboard.html', username=username)
+@app.route('/dashboard')
+def dashboard():
+    if 'username' in session:
+        return render_template('dashboard.html', username=session['username'])
+    else:
+        return redirect(url_for('index'))
 
 
 #   End Bagian keempat
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
+# if __name__ == '__main__':
+app.debug = True
+app.secret_key = '5813En@'
+app.run()

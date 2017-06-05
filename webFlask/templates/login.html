@@ -15,12 +15,12 @@
                         <span class="glyphicon glyphicon-user"></span>
                         Account Login
                     </h4>
-                    {% if error%}
+                    {% if error %}
                     <div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <strong>{{error}}</strong>
+                        <strong>{{ error }}</strong>
                     </div>
-                    {% endif%}
+                    {% endif %}
                     <form action="{{ url_for('login') }}" method="POST" style="padding:20px;">
                         <div class="form-group input-group">
                             <span class="input-group-addon">

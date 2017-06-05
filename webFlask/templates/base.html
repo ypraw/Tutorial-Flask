@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% block head %}
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}FLASK TUTORIAL</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+    {% endblock %}
+  </head>
+  <body>
+      <div class=""id="content">
+          {% block content %}{% endblock %}
+      </div>
+
+      <footer>
+          {% block footer %}
+          <div class="panel panel-default">
+              <div class="panel-default">
+                    &copy; Copyright 2017 by Yunindyo Prabowo
+              </div>
+          </div>
+
+          {% endblock %}
+      </footer>
+     <script src="/assets/js/jquery-min.js"></script>
+     <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

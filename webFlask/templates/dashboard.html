@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Dasboard Tutorial Flask</title>
-        <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block title %}
+    Dasboard
+{% endblock %}
+{% block content %}
         <div class="" style="padding:10px">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h1>Dasboard <small>oleh {{username}}</small></h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1>Dasboard <small>oleh {{username}}</small></h1>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+
+                            </div>
+                            <a href="{{ url_for('logout') }}"class="btn btn-info" role="button"> Logout </a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
+{% endblock %}
+{% block footer %}
 
-
-    </body>
-</html>
+{% endblock %}
