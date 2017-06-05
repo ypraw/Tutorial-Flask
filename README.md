@@ -42,7 +42,7 @@ Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask
 > * Return String Hello World (commited)
 > * Rendering Template (commited)
 > * Routing (commited)
-> * The Real Aplication (on Progress)
+> * The Real Aplication, Template Inheritance (commited)
 > * Login Modelling mysql (on Progress)
 
 # V.2
