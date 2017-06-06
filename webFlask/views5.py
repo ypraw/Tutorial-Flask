@@ -50,6 +50,14 @@ def dashboard():
         return redirect(url_for('index'))
 
 
+@app.route('/profile')
+def profile():
+    if 'username' in session:
+        return render_template('profile.html', username=session['username'])
+    else:
+        return redirect(url_for('index'))
+
+
 #   End Bagian keempat
 # if __name__ == '__main__':
 app.debug = True

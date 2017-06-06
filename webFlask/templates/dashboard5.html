@@ -10,10 +10,14 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-6">
+                            {% block title_panel %}
                             <h1><strong>Dasboard</strong> <small>{{username}}</small></h1>
+                            {% endblock %}
                         </div>
                         <div class="col-md-3">
-                            <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Profil</a>
+                            {% block profile_btn %}
+                            <a href="{{ url_for('profile') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Profil</a>
+                            {% endblock %}
                         </div>
                         <div class="col-md-3">
                             <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Logout</a>
@@ -21,6 +25,7 @@
                     </div>
                 </div>
             </div>
+            {% block content_panel %}
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -28,5 +33,6 @@
                     </div>
                 </div>
             </div>
+            {% endblock %}
         </div>
 {% endblock %}
