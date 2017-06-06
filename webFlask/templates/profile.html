@@ -1,9 +1,11 @@
 {% extends "dashboard5.html" %}
 {% block head %}
 
+{% block title %}
+
+{% endblock %}
 {{ super() }}
 <link rel="stylesheet" href="/assets/css/custom.css">
-
 {% endblock %}
 
 {% block title_panel %}
@@ -36,7 +38,7 @@
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </fieldset>
-        <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+        
     </form>
 </div>
 {% endblock %}
