@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    Dasboard
+{% endblock %}
+{% block panel %}
+{% endblock %}
+{% block content %}
+        <div class="" style="padding:10px">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1><strong>Dasboard</strong> <small>{{username}}</small></h1>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Profil</a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1><strong>HELLO {{username}}</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
