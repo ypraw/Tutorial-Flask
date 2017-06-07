@@ -11,10 +11,13 @@ cur = konek.getDB()
 
 @app.route('/')
 def index():
+    cur.execute("SELECT * from  tb_content")
+    result = cur.fetchall()
+    print(result)
     if 'username' in session:
         return render_template('dashboard5.html', username=session['username'])
     else:
-        return render_template('home5.html')
+        return render_template('home5.html', result=result)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -38,8 +41,7 @@ def logout():
 def validasi_login(username, password):
     cur.execute("SELECT * from tb_user WHERE username=%s AND password=%s",
                 (username, password))
-    result = cur.fetchone()
-    if result:
+    if cur.fetchone():
         return True
     else:
         return False

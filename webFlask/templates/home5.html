@@ -14,7 +14,13 @@ Welcome
                 <center> NEWS UPDATE </center>
             </div>
             <div class="panel-body">
-
+                <ul>
+                {% for item in result %}
+                    <li>{{ item[1] }}
+                        
+                     </li>
+                {% endfor %}
+            </ul>
             </div>
         </div>
     </div>
