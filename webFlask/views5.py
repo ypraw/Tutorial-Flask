@@ -12,9 +12,9 @@ cur = konek.getDB()
 @app.route('/')
 def index():
     if 'username' in session:
-        return render_template('dashboard.html', username=session['username'])
+        return render_template('dashboard5.html', username=session['username'])
     else:
-        return render_template('home.html')
+        return render_template('home5.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
