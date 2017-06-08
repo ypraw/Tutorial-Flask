@@ -14,22 +14,39 @@
 
 
   {% block panel %}
-                <div class="container-fluid" style="background-color:#023e79;padding-top:10px;">
-                    <div class="row">
-                        <div class="col-md-9 col-xs-9">
-                                <a href="{{ url_for('index')}}" style="color:#fff;">
-                                 <h1 ><strong>Tutorial Flask</strong> <small>oleh Yunindyo Prabowo</small></h1>
-                                 </a>
-                        </div>
-                        <div class="col-md-3 col-xs-3" style="padding-top:10px;">
-                            {% block button_login %}
-                             <a href="{{url_for('login')}}" class="btn btn-info" role="button">Login Here !!!</a>
-                             {% endblock %}
-                        </div>
-                    </div>
-                </div>
+  <div class="panel panel-info">
+      <div class="panel-heading">
+              <h1>FLASK Tutorial <small>oleh Yunindyo Prabowo</small></h1>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+          {% block panel_info %}
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                      <center>Tutorial Flask </center>
+              </div>
+              <div class="panel-body">
+                  <header>
+                      Aplikasi <i><b>CRUD</b></i> menggunakan flask sebagai development frameworknya. Berisikan penngenalan
+                      Routing, Templating (View in MVC), Viewing (Controller in MVC) dan crud menggunakan Raw_query
+                  </header>
+              </div>
+              <center>
+                   <a href="{{url_for('login')}}" class="btn btn-info" role="button">Return Login Page </a>
+               </center>
+          </div>
+          {% endblock %}
+
+      </div>
+      <div class="col-md-4">
+
+      </div>
+  </div>
       {% endblock %}
-      <div class=""id="content">
+      <div class="container">
 
           {% block content %}
 
@@ -40,7 +57,6 @@
 
      <script src="/assets/js/jquery-min.js"></script>
      <script src="/assets/js/bootstrap.min.js"></script>
-     <script src="/assets/js/jquery.scrollbox.js"></script>
      {% block panel_script %}
 
      {% endblock %}

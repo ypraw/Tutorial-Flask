@@ -12,7 +12,7 @@
     <h1><strong> Profile page </strong><small>{{username}}</small></h1>
 {% endblock %}
 {% block profile_btn %}
-<a href="{{ url_for('dashboard') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Dashboard</a>
+<a href="{{ url_for('dashboard') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-home" aria-hidden="false"></span> Dashboard</a>
 {% endblock %}
 
 {% block content_panel %}
@@ -38,7 +38,7 @@
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </fieldset>
-        
+
     </form>
 </div>
 {% endblock %}
