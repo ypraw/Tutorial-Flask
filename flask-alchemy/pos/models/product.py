@@ -1,7 +1,7 @@
 from pos.models import db
 
 
-class Products(db.Model):
+class Product(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 

@@ -12,23 +12,23 @@
         </tr>
         </thead>
         <tbody>
-        {% for product in products %}
+        {% for products in product %}
             <tr>
                 <td>
-                    {{ product.id }}
+                    {{ products.id }}
                 </td>
                 <td>
-                    {{ product.name }}
+                    {{ products.name }}
                 </td>
                 <td>
-                    {{ product.price }}
+                    {{ products.price }}
                 </td>
                 <td>
-                    {{ product.stock }}
+                    {{ products.stock }}
                 </td>
                 <td>
-                    <a href="/products/update?id={{ product.id }}">edit</a>
-                    <a href="/products/delete?id={{ product.id }}">delete</a>
+                    <a href="/product/update?id={{ products.id }}">edit</a>
+                    <a href="/product/delete?id={{ products.id }}">delete</a>
                 </td>
             </tr>
         {% endfor %}
