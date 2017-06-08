@@ -1,6 +1,6 @@
-from flask import Blueprints
+from flask import Blueprints, render_template
 bp = Blueprints("products",__name__)
 
 @bp.route("/products")
 def products_list():
-    return
+    return render_template("products/list.html")
