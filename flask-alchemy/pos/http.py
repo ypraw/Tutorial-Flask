@@ -1,7 +1,7 @@
 from flask import Flask
 from pos.config import Config
 from pos.models import db
-from pos.views import products
+from pos.views import products, index
 
 
 def create_app(config=Config):
@@ -14,6 +14,7 @@ def create_app(config=Config):
     db.init_app(app)
 
     # register bluepritn
+    app.register_blueprint(index.bp)
     app.register_blueprint(products.bp)
 
     return app

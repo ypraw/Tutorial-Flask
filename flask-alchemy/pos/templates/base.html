@@ -1,20 +1,34 @@
-<!doctype html>
-<head>
-    <title>Point of Sale</title>
-    <link rel=stylesheet type=text/css href="/assets/css/bootstrap.css">
-</head>
-<body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li><a href="/products">list product</a></li>
-            <li><a href="/products/add">add product</a></li>
-            <li><a href="/transaction">list transaction</a></li>
-            <li><a href="/transaction/add">add transaction</a></li>
-        </ul>
-    </div>
-</nav>
-<div class="container">
-    {% block content %}{% endblock %}
-</div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FLASK-SQLALCHEMY</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-default ">
+          <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                  <li><a href="/products">list product</a></li>
+                  <li><a href="/products/add">add product</a></li>
+                  <li><a href="/transaction">list transaction</a></li>
+                  <li><a href="/transaction/add">add transaction</a></li>
+              </ul>
+          </div>
+      </nav>
+      <div class="container">
+          {% block content %}{% endblock %}
+      </div>
+
+    <script src="/assets/js/jquery-min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
