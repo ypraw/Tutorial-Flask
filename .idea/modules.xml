@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://E:/Python/Practice/artificialIntelligence/.idea/artificialIntelligence.iml" filepath="E:/Python/Practice/artificialIntelligence/.idea/artificialIntelligence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/webFlask.iml" filepath="$PROJECT_DIR$/.idea/webFlask.iml" />
+    </modules>
+  </component>
+</project>
