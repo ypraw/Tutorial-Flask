@@ -46,6 +46,7 @@ Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask
 > * CRUD Modelling (commited)
 
 Untuk yang ingin langsung menggunakan CRUD , dapat mengupload Pos(2).sql langsung ke mysqlnya masing-masing bisa menggunakan mysql workbrench atau phpmyadmin.
+pasword defaultnya adalah admin dan usernamenya adalah ypraw
 
 # V.2 (Flask SQL-Alchemy)
 Tutorial lanjutan Flask menggunakan ORM Flask-SqlAlchemy dan Blueprint sebagai modul untuk membuat modular application
