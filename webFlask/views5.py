@@ -51,12 +51,46 @@ def dashboard():
         return redirect(url_for('index'))
 
 
-@app.route('/profile')
-def profile():
+@app.route('/product/add', methods=['GET', 'POST'])
+def add_product():
+    # cek apakah user sudah login, untuk mencegah akses data pada database
     if 'username' in session:
-        return render_template('profile.html', username=session['username'])
+        if request.method == "GET":
+            return render_template("add_product5.html")
+        # ambil data dari form add product
+        name = request.form["name"]
+        price = request.form["price"]
+        stock = request.form["stock"]
+
+        # input ke database
+        cur.execute("INSERT INTO product values ((%s),(%s),(%s),(%s))",
+                    (None, name, price, stock,))
+
+        return redirect("/dashboard")
+    # jika belum login maka diarahkan ke login page
     else:
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
+
+
+@app.route('/product/update', methods=['GET', 'POST'])
+def update_product():
+    # cek apakah user sudah login, untuk mencegah akses data pada database
+    if 'username' in session:
+        if request.method == "GET":
+            return render_template("add_product5.html")
+        # ambil data dari form add product
+        name = request.form["name"]
+        price = request.form["price"]
+        stock = request.form["stock"]
+
+        # input ke database
+        cur.execute("INSERT INTO product values ((%s),(%s),(%s),(%s))",
+                    (None, name, price, stock,))
+
+        return redirect("/dashboard")
+    # jika belum login maka diarahkan ke login page
+    else:
+        return redirect(url_for('login'))
 
 
 #   End Bagian keempat

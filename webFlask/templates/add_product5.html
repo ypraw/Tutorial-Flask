@@ -1,0 +1,35 @@
+{% extends "dashboard5.html" %}
+{% block title_panel %}
+    <h1><strong>ADD PRODUCT</strong></h1>
+{% endblock %}
+{% block panel_navigation %}
+<li><a href="/dashboard">Dasboard</a></li>
+<li><a href="/transaction">list transaction</a></li>
+<li><a href="/transaction/add">add transaction</a></li>
+{% endblock %}
+
+{% block panel_list_product %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <center><h3><strong>Tambah Produk</strong></h3></center>
+    </div>
+    <div class="panel-body">
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input name="price" type="text" class="form-control" id="price" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input name="stock" type="text" class="form-control" id="stock" placeholder="Stock">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

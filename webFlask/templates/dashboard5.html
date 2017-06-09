@@ -24,9 +24,11 @@
                     <nav class="navbar navbar-default ">
                         <div class="container-fluid">
                             <ul class="nav navbar-nav">
+                                {% block panel_navigation %}
                                 <li><a href="/product/add">add product</a></li>
                                 <li><a href="/transaction">list transaction</a></li>
                                 <li><a href="/transaction/add">add transaction</a></li>
+                                {% endblock %}
                             </ul>
                         </div>
                     </nav>
@@ -40,7 +42,10 @@
                 </div>
 
                 <div class="col-md-4">
-                    <table class="table table-bordered table-striped">
+                    {% block panel_list_product %}
+
+                    <table class="table table-bordered table-striped" fixed-header>
+
                         <thead>
                         <tr>
                             <th>id</th>
@@ -73,6 +78,7 @@
                         {% endfor %}
                         </tbody>
                     </table>
+                    {% endblock %}
                 </div>
                 <div class="col-md-4">
 
