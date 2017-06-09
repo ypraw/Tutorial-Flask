@@ -43,7 +43,7 @@ Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask
 > * Rendering Template (commited)
 > * Routing (commited)
 > * The Real Aplication, Template Inheritance (commited)
-> * Login Modelling mysql (on Progress)
+> * CRUD Modelling (on Progress)
 
 # V.2 (Flask SQL-Alchemy)
 Tutorial lanjutan Flask menggunakan ORM Flask-SqlAlchemy dan Blueprint sebagai modul untuk membuat modular application
