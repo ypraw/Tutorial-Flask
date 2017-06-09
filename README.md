@@ -41,7 +41,7 @@ Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask
 > * Rendering Template (commited)
 > * Routing (commited)
 > * The Real Aplication, Template Inheritance (commited)
-> * CRUD Modelling (commited)
+> * The Real Aplication, CRUD Modelling (commited)
 
 Untuk yang ingin langsung menggunakan CRUD (bagian kelima) , dapat mengupload Pos(2).sql langsung ke mysqlnya masing-masing bisa menggunakan mysql workbrench atau phpmyadmin.
 password defaultnya adalah admin dan usernamenya adalah ypraw
