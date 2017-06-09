@@ -35,7 +35,7 @@ $ flask run
 ```
 hal ini berlaku seterusnya. atau jika ingin menggunakan 1 views. maka hapus semua kode di disetiap bagian dari tutorial ini, lalu samakan dengan kode dari bagian yang sedang anda pelajari.
 
-> [coming soon] **_The Real Application CRUD On FLASK_**
+> [PASSING] **_The Real Application CRUD On FLASK_**
 
 Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask-Tutorial-Dasar/)
 > ### Terdiri Dari
