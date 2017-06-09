@@ -10,41 +10,41 @@
     {% endblock %}
   </head>
   <body>
-
-
-
   {% block panel %}
-  <div class="panel panel-info">
-      <div class="panel-heading">
-              <h1>FLASK Tutorial <small>oleh Yunindyo Prabowo</small></h1>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-4">
-      </div>
-      <div class="col-md-4">
-          {% block panel_info %}
-          <div class="panel panel-primary">
-              <div class="panel-heading">
-                      <center>Tutorial Flask </center>
-              </div>
-              <div class="panel-body">
-                  <header>
-                      Aplikasi <i><b>CRUD</b></i> menggunakan flask sebagai development frameworknya. Berisikan penngenalan
-                      Routing, Templating (View in MVC), Viewing (Controller in MVC) dan crud menggunakan Raw_query
-                  </header>
-              </div>
-              <center>
-                   <a href="{{url_for('login')}}" class="btn btn-info" role="button">Return Login Page </a>
-               </center>
+  <div class="container">
+      <div class="panel panel-info">
+          <div class="panel-heading">
+                  <h1>FLASK Tutorial <small>oleh Yunindyo Prabowo</small></h1>
           </div>
-          {% endblock %}
-
       </div>
-      <div class="col-md-4">
+      <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4">
+              {% block panel_info %}
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                          <center>Tutorial Flask </center>
+                  </div>
+                  <div class="panel-body">
+                      <header>
+                          Aplikasi <i><b>CRUD</b></i> menggunakan flask sebagai development frameworknya. Berisikan penngenalan
+                          Routing, Templating (View in MVC), Viewing (Controller in MVC) dan crud menggunakan Raw_query
+                      </header>
+                  </div>
+                  <center>
+                       <a href="{{url_for('login')}}" class="btn btn-info" role="button">Return Login Page </a>
+                   </center>
+              </div>
+              {% endblock %}
 
+          </div>
+          <div class="col-md-4">
+
+          </div>
       </div>
   </div>
+
       {% endblock %}
       <div class="container">
 
