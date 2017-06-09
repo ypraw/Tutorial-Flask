@@ -15,24 +15,70 @@
                             {% endblock %}
                         </div>
                         <div class="col-md-3">
-                            {% block profile_btn %}
-                            <a href="{{ url_for('profile') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-user" aria-hidden="false"></span> Profil</a>
-                            {% endblock %}
+
                         </div>
                         <div class="col-md-3">
                             <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Logout</a>
                         </div>
                     </div>
+                    <nav class="navbar navbar-default ">
+                        <div class="container-fluid">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/product/add">add product</a></li>
+                                <li><a href="/transaction">list transaction</a></li>
+                                <li><a href="/transaction/add">add transaction</a></li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
             {% block content_panel %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1><strong>HELLO {{username}}</strong></h1>
-                    </div>
+
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+
+                <div class="col-md-4">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>price</th>
+                            <th>stock</th>
+                            <th>action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in resultProduct %}
+                            <tr>
+                                <td>
+                                    {{ item[0] }}
+                                </td>
+                                <td>
+                                    {{ item[1] }}
+                                </td>
+                                <td>
+                                    {{ item[2] }}
+                                </td>
+                                <td>
+                                    {{ item[3] }}
+                                </td>
+                                <td>
+                                    <a href="">edit</a>
+                                    <a href="">delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+
                 </div>
             </div>
+
             {% endblock %}
         </div>
 {% endblock %}

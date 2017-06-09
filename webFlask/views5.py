@@ -5,19 +5,13 @@ import connection as db
 
 app = Flask(__name__, static_url_path='')
 
-konek = db.MysqlUserDB('127.0.0.1', 'root', '', 'flasktutorial')
+konek = db.MysqlUserDB('127.0.0.1', 'root', '', 'pos')
 cur = konek.getDB()
 
 
 @app.route('/')
 def index():
-    cur.execute("SELECT * from  tb_content")
-    result = cur.fetchall()
-    print(result)
-    if 'username' in session:
-        return render_template('dashboard5.html', username=session['username'])
-    else:
-        return render_template('home5.html', result=result)
+    return render_template('home5.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -50,7 +44,9 @@ def validasi_login(username, password):
 @app.route('/dashboard')
 def dashboard():
     if 'username' in session:
-        return render_template('dashboard5.html', username=session['username'])
+        cur.execute("SELECT * from product")
+        resultProduct = cur.fetchall()
+        return render_template('dashboard5.html', resultProduct=resultProduct)
     else:
         return redirect(url_for('index'))
 
