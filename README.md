@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ```
 
 # Versi 1 (webFlask)
-Merupakan source tutorial flask dengan basic template, routing dan views. Dimana setiap file template dan views direpresentasikan masing-maing viewsZ.py/indexZ.html dimana **Z** merujuk pada bagian 1 2 3.
+Merupakan source tutorial flask dengan basic template, routing, views dan CRUD. Dimana setiap file template dan views direpresentasikan masing-maing viewsZ.py/indexZ.html dimana **Z** merujuk pada bagian 1 2 3.
 
 <b><i>setiap kali pindah bagian perhatikan untuk meng-export viewx.py sesuai dengan bagian yang sedang diikuti.</i></b>
 
@@ -35,8 +35,6 @@ $ flask run
 ```
 hal ini berlaku seterusnya. atau jika ingin menggunakan 1 views. maka hapus semua kode di disetiap bagian dari tutorial ini, lalu samakan dengan kode dari bagian yang sedang anda pelajari.
 
-> [PASSING] **_The Real Application CRUD On FLASK_**
-
 Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask-Tutorial-Dasar/)
 > ### Terdiri Dari
 > * Return String Hello World (commited)
@@ -45,8 +43,8 @@ Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask
 > * The Real Aplication, Template Inheritance (commited)
 > * CRUD Modelling (commited)
 
-Untuk yang ingin langsung menggunakan CRUD , dapat mengupload Pos(2).sql langsung ke mysqlnya masing-masing bisa menggunakan mysql workbrench atau phpmyadmin.
-pasword defaultnya adalah admin dan usernamenya adalah ypraw
+Untuk yang ingin langsung menggunakan CRUD (bagian kelima) , dapat mengupload Pos(2).sql langsung ke mysqlnya masing-masing bisa menggunakan mysql workbrench atau phpmyadmin.
+password defaultnya adalah admin dan usernamenya adalah ypraw
 
 # V.2 (Flask SQL-Alchemy)
 Tutorial lanjutan Flask menggunakan ORM Flask-SqlAlchemy dan Blueprint sebagai modul untuk membuat modular application
