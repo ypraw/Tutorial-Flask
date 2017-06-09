@@ -37,13 +37,15 @@ hal ini berlaku seterusnya. atau jika ingin menggunakan 1 views. maka hapus semu
 
 > [coming soon] **_The Real Application CRUD On FLASK_**
 
-Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask-Tutorial-Bagian-1/)
+Dapat dilihat selengkapnya di [My Blog](https://ypraw.github.io/categories/Flask-Tutorial-Dasar/)
 > ### Terdiri Dari
 > * Return String Hello World (commited)
 > * Rendering Template (commited)
 > * Routing (commited)
 > * The Real Aplication, Template Inheritance (commited)
-> * CRUD Modelling (on Progress)
+> * CRUD Modelling (commited)
+
+Untuk yang ingin langsung menggunakan CRUD , dapat mengupload Pos(2).sql langsung ke mysqlnya masing-masing bisa menggunakan mysql workbrench atau phpmyadmin.
 
 # V.2 (Flask SQL-Alchemy)
 Tutorial lanjutan Flask menggunakan ORM Flask-SqlAlchemy dan Blueprint sebagai modul untuk membuat modular application
