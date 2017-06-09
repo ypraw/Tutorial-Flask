@@ -11,6 +11,8 @@ cur = konek.getDB()
 
 @app.route('/')
 def index():
+    if 'username' in session:
+        return redirect("/dashboard")
     return render_template('home5.html')
 
 
@@ -74,26 +76,43 @@ def add_product():
 
 @app.route('/product/update', methods=['GET', 'POST'])
 def update_product():
+
     # cek apakah user sudah login, untuk mencegah akses data pada database
     if 'username' in session:
+        product_id = request.args['id']
         if request.method == "GET":
-            return render_template("add_product5.html")
-        # ambil data dari form add product
+            cur.execute("SELECT * from product WHERE id = (%s)", product_id)
+            result = cur.fetchone()
+            return render_template("edit_product5.html", result=result)
+
+        # ambil data dari form edit product
         name = request.form["name"]
         price = request.form["price"]
         stock = request.form["stock"]
 
-        # input ke database
-        cur.execute("INSERT INTO product values ((%s),(%s),(%s),(%s))",
-                    (None, name, price, stock,))
-
+        # Get , while rule reques method is POST
+        cur.execute("UPDATE product SET name= (%s), price= (%s), stock= (%s)"
+                    "Where id= ( %s)",
+                    (name, price, stock, product_id))
         return redirect("/dashboard")
     # jika belum login maka diarahkan ke login page
     else:
         return redirect(url_for('login'))
 
 
-#   End Bagian keempat
+@app.route("/product/delete")
+def product_delete():
+    """Delete product"""
+    product_id = request.args['id']
+    cur.execute("SELECT * from product WHERE id = (%s)", product_id)
+    result = cur.fetchone()
+    if result:
+        # delete product by id
+        cur.execute("DELETE FROM product WHERE id =(%s)", product_id)
+    return redirect("/dashboard")
+
+
+#   End Bagian kelima
 # if __name__ == '__main__':
 app.debug = True
 app.secret_key = '4KuC1nT@K4MU'

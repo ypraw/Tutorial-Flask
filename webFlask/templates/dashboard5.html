@@ -26,8 +26,7 @@
                             <ul class="nav navbar-nav">
                                 {% block panel_navigation %}
                                 <li><a href="/product/add">add product</a></li>
-                                <li><a href="/transaction">list transaction</a></li>
-                                <li><a href="/transaction/add">add transaction</a></li>
+
                                 {% endblock %}
                             </ul>
                         </div>
@@ -71,8 +70,8 @@
                                     {{ item[3] }}
                                 </td>
                                 <td>
-                                    <a href="">edit</a>
-                                    <a href="">delete</a>
+                                    <a href="product/update?id={{ item[0] }}">edit</a>
+                                    <a href="/product/delete?id={{ item[0] }}">delete</a>
                                 </td>
                             </tr>
                         {% endfor %}

@@ -1,0 +1,66 @@
+{% extends 'dashboard5.html' %}
+{% block title %}
+    EDIT-PAGE
+{% endblock %}
+{% block content %}
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-6">
+                {% block title_panel %}
+                <h1><strong>EDIT PRODUCT</strong> <small>{{username}}</small></h1>
+                {% endblock %}
+            </div>
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-3">
+                <a href="{{ url_for('logout') }}"class="btn btn-info navbar-right" role="button" style="margin-top:15px;margin-right:5px;"><span class="glyphicon glyphicon-off" aria-hidden="false"></span> Logout</a>
+            </div>
+        </div>
+        <nav class="navbar navbar-default ">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    {% block panel_navigation %}
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/product/add">Add product</a></li>
+                    {% endblock %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <center><h3><strong>Update data Product</strong></h3></center>
+            </div>
+            <div class="panel-body">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="{{ result[1] }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input name="price" type="text" class="form-control" id="price" placeholder="Price" value="{{ result[2] }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input name="stock" type="text" class="form-control" id="stock" placeholder="Stock" value="{{ result[3] }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+{% endblock %}
