@@ -49,3 +49,9 @@ password defaultnya adalah admin dan usernamenya adalah ypraw
 # V.2 (Flask SQL-Alchemy)
 Tutorial lanjutan Flask menggunakan ORM Flask-SqlAlchemy dan Blueprint sebagai modul untuk membuat modular application
 [On Progress]
+
+
+
+# Sumber
+> _Di edit dan di mofidifikasi seperlunya_
+> https://github.com/faisalburhanudin/py89
